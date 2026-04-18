@@ -73,9 +73,9 @@ export function HeroSection() {
             />
           </div>
         ))}
-        {/* Multi-layer Gradient Overlay - Light black for better image visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10" />
+        {/* Multi-layer Gradient Overlay - Lighter for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/15 to-primary/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/25 via-transparent to-primary/15" />
         {/* Animated Particles Effect */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full animate-pulse" />
@@ -291,7 +291,7 @@ export function HeroSection() {
       </div>
 
       {/* Trust Badges - Floating at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent pt-20 pb-6 z-10">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/60 to-transparent pt-20 pb-6 z-10">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
