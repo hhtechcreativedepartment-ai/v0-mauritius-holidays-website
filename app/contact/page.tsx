@@ -233,7 +233,7 @@ export default function ContactPage() {
                           <Input 
                             id="phone" 
                             type="tel" 
-                            placeholder="+44 7onal 000 000" 
+                            placeholder="+44 20 8732 4444" 
                             className="bg-background"
                           />
                         </div>

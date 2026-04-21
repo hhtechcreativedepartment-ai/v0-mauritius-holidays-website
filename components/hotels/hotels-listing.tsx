@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Star, Filter, SlidersHorizontal, X, MapPin, Calendar, Users, Plane } from 'lucide-react'
@@ -28,10 +28,10 @@ import { hotels, boardTypes } from '@/lib/data'
 const coastOptions = ['North Coast', 'Northwest Coast', 'West Coast', 'Southwest Coast', 'South Coast', 'East Coast']
 const starOptions = [5, 4, 3]
 const priceRanges = [
-  { label: 'Under £1,500', min: 0, max: 1500 },
-  { label: '£1,500 - £2,000', min: 1500, max: 2000 },
-  { label: '£2,000 - £2,500', min: 2000, max: 2500 },
-  { label: 'Over £2,500', min: 2500, max: Infinity },
+  { label: 'Under GBP 1,500', min: 0, max: 1500 },
+  { label: 'GBP 1,500 - 2,000', min: 1500, max: 2000 },
+  { label: 'GBP 2,000 - 2,500', min: 2000, max: 2500 },
+  { label: 'Over GBP 2,500', min: 2500, max: Infinity },
 ]
 
 export function HotelsListing() {
@@ -281,9 +281,9 @@ export function HotelsListing() {
             className="rounded-xl h-11"
           />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <Select value={sortBy} onValueChange={setSortBy}>
-            <SelectTrigger className="w-[180px] rounded-xl h-11">
+            <SelectTrigger className="w-full sm:w-[180px] rounded-xl h-11">
               <SelectValue placeholder="Sort by" />
             </SelectTrigger>
             <SelectContent>
@@ -297,7 +297,7 @@ export function HotelsListing() {
           {/* Mobile Filter Button */}
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" className="lg:hidden rounded-xl h-11 gap-2">
+              <Button variant="outline" className="lg:hidden rounded-xl h-11 gap-2 w-full sm:w-auto">
                 <SlidersHorizontal className="w-4 h-4" />
                 Filters
                 {hasActiveFilters && (
@@ -376,7 +376,7 @@ export function HotelsListing() {
       )}
 
       {/* Main Content */}
-      <div className="flex gap-8">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Desktop Sidebar */}
         <aside className="hidden lg:block w-64 shrink-0">
           <Card className="rounded-2xl border-0 shadow-sm sticky top-24">
@@ -410,6 +410,8 @@ export function HotelsListing() {
                       <img
                         src={hotel.image}
                         alt={hotel.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute top-3 left-3">
@@ -447,7 +449,7 @@ export function HotelsListing() {
                           ))}
                         </div>
                       </div>
-                      <div className="flex items-end justify-between mt-6 pt-4 border-t border-border">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mt-6 pt-4 border-t border-border">
                         <div>
                           <p className="text-xs text-muted-foreground">{hotel.period}</p>
                           <p className="text-xs text-muted-foreground line-through">
@@ -461,11 +463,11 @@ export function HotelsListing() {
                             Save &pound;{((hotel.originalPrice - hotel.price) * 2).toLocaleString()} per couple
                           </p>
                         </div>
-                        <div className="flex gap-2">
-                          <Button variant="outline" className="rounded-full" asChild>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                          <Button variant="outline" className="rounded-full w-full sm:w-auto" asChild>
                             <Link href={`/hotels/${hotel.slug}`}>View Details</Link>
                           </Button>
-                          <Button className="rounded-full" asChild>
+                          <Button className="rounded-full w-full sm:w-auto" asChild>
                             <Link href={`/contact?hotel=${hotel.slug}`}>Get Quote</Link>
                           </Button>
                         </div>
@@ -481,3 +483,8 @@ export function HotelsListing() {
     </div>
   )
 }
+
+
+
+
+

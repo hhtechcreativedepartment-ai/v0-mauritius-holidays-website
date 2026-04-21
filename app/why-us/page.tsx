@@ -283,7 +283,7 @@ export default function WhyUsPage() {
                   ))}
                 </div>
                 <div>
-                  <p className="font-semibold">{brand.trustpilotScore}/10</p>
+                  <p className="font-semibold">{brand.trustpilotScore}/5</p>
                   <p className="text-xs text-muted-foreground">{brand.trustpilotReviews} reviews</p>
                 </div>
               </div>

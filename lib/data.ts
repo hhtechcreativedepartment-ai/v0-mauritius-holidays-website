@@ -4,7 +4,7 @@ export const brand = {
   phoneAlt: '0203 514 8222',
   email: 'info@mauritiusholidaysdirect.co.uk',
   address: '123 Travel House, London, SW1A 1AA',
-  hours: 'Mon–Fri 9am–6pm · Sat 10am–4pm',
+  hours: 'Mon-Fri 9am-6pm | Sat 10am-4pm',
   trustpilotScore: '5.0',
   trustpilotReviews: '1,004',
 }
@@ -20,49 +20,49 @@ export const navItems = [
 ]
 
 export const categories = [
-  { 
+  {
     id: 'all-inclusive',
-    title: 'All Inclusive', 
+    title: 'All Inclusive',
     subtitle: 'Stress-free luxury holidays',
     description: 'Everything included for a truly relaxing Mauritius experience.',
     propertyCount: 39,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hammocks-arranged-rows-pool-9mHVNND9SpbWQ65wzsfnYcAc94fMiv.jpg',
   },
-  { 
+  {
     id: 'honeymoon',
-    title: 'Honeymoon', 
+    title: 'Honeymoon',
     subtitle: 'Romantic island escapes',
     description: 'Create unforgettable memories with your partner in paradise.',
     propertyCount: 40,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/beautiful-luxury-outdoor-swimming-pool-hotel-resort-GL2S39UkbjMGQbc1eaCVMXQTMgU3Qw.jpg',
   },
-  { 
+  {
     id: 'family',
-    title: 'Family Holidays', 
+    title: 'Family Holidays',
     subtitle: 'Easy, fun & memorable',
     description: 'Family-friendly resorts with kids clubs and activities for all ages.',
     propertyCount: 36,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hammocks-umbrellas-placed-row-4T6TQAytUAJ1kXJbt33gEbq2eHTDqw.jpg',
   },
-  { 
+  {
     id: 'wedding',
-    title: 'Weddings', 
+    title: 'Weddings',
     subtitle: 'Destination celebrations',
     description: 'Say "I do" in one of the world\'s most romantic destinations.',
     propertyCount: 19,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1796325354619cc8226f7866.48916407-b2Zopl9ymzYUwEPOXaqt6qbgotP0o5.jpg',
   },
-  { 
+  {
     id: 'golf',
-    title: 'Golf Holidays', 
+    title: 'Golf Holidays',
     subtitle: 'Championship fairways',
     description: 'World-class courses with stunning Indian Ocean backdrops.',
     propertyCount: 16,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leisure-beautiful-health-garden-landscape-buPXhULhorsvsl96kDOHAGToxM2eog.jpg',
   },
-  { 
+  {
     id: 'twin-centre',
-    title: 'Twin Centre', 
+    title: 'Twin Centre',
     subtitle: 'Two journeys, one booking',
     description: 'Combine Mauritius with Dubai, Seychelles, or South Africa.',
     propertyCount: 14,
@@ -89,7 +89,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-garden-luxury-pool-nature-K0rejE2eyHMT0IPYvIlZfI9rER1kIk.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hammocks-umbrellas-placed-row-4T6TQAytUAJ1kXJbt33gEbq2eHTDqw.jpg',
     ],
-    description: 'Fully renovated in 2023, the charming Veranda Grand Baie Hotel & Spa offers guests the chance to enjoy a relaxing holiday in stunning surroundings. Situated close to the lively Grand Baie village, this fabulous resort sits on a magnificent lagoon, where white sands and thatched beach parasols create an idyllic tropical setting.',
+    description:
+      'Fully renovated in 2023, the charming Veranda Grand Baie Hotel & Spa offers guests the chance to enjoy a relaxing holiday in stunning surroundings. Situated close to the lively Grand Baie village, this fabulous resort sits on a magnificent lagoon, where white sands and thatched beach parasols create an idyllic tropical setting.',
     highlights: ['Renovated in 2023', 'Close to Grand Baie village', 'Magnificent lagoon location', 'Spa & wellness facilities'],
     categories: ['family', 'all-inclusive'],
   },
@@ -111,7 +112,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hammocks-arranged-rows-pool-9mHVNND9SpbWQ65wzsfnYcAc94fMiv.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pool-with-palm-trees-sides-byKwAZ6PNPQp70rjuuPcZEybGHgRdn.jpg',
     ],
-    description: 'Long Beach is a magnificent contemporary 5-star resort, blending Mauritian style with an elegant twist. Approximately an hour from the airport, it is positioned on the untamed Eastern coast of Mauritius. Long Beach derives its name from its remarkably long beachfront, pulsating with energy and activity.',
+    description:
+      'Long Beach is a magnificent contemporary 5-star resort, blending Mauritian style with an elegant twist. Approximately an hour from the airport, it is positioned on the untamed Eastern coast of Mauritius. Long Beach derives its name from its remarkably long beachfront, pulsating with energy and activity.',
     highlights: ['Contemporary 5-star resort', 'Remarkably long beachfront', 'Eastern coast location', 'Perfect for active travellers'],
     categories: ['honeymoon', 'family'],
   },
@@ -133,7 +135,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/beautiful-luxury-outdoor-swimming-pool-hotel-resort-GL2S39UkbjMGQbc1eaCVMXQTMgU3Qw.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/silhouette-palm-tree-with-umbrella-u1M7JhC4sFDavsv5Rki2kcoqYKh3xP.jpg',
     ],
-    description: 'LUX* Belle Mare invites you to indulge in a haven of tranquility and natural beauty. Set against the backdrop of sparkling turquoise waters and a long stretch of powder-soft white sand, this vibrant resort offers an experience that seamlessly blends island life with contemporary luxury.',
+    description:
+      'LUX* Belle Mare invites you to indulge in a haven of tranquility and natural beauty. Set against the backdrop of sparkling turquoise waters and a long stretch of powder-soft white sand, this vibrant resort offers an experience that seamlessly blends island life with contemporary luxury.',
     highlights: ['Powder-soft white sand beach', 'Turquoise waters', 'Contemporary luxury', 'World-class spa'],
     categories: ['honeymoon', 'all-inclusive'],
   },
@@ -155,7 +158,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-garden-luxury-pool-nature-K0rejE2eyHMT0IPYvIlZfI9rER1kIk.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hammocks-umbrellas-placed-row-4T6TQAytUAJ1kXJbt33gEbq2eHTDqw.jpg',
     ],
-    description: 'Located in a picturesque private estate along the protected marine park of Turtle Bay, Maritim resort is made for those looking to immerse themselves in the Mauritian experience. Set within a 62 acre historical estate, with a garden that has been named the most beautiful in Mauritius.',
+    description:
+      'Located in a picturesque private estate along the protected marine park of Turtle Bay, Maritim resort is made for those looking to immerse themselves in the Mauritian experience. Set within a 62 acre historical estate, with a garden that has been named the most beautiful in Mauritius.',
     highlights: ['62 acre historical estate', 'Protected marine park', 'Award-winning gardens', 'Full all-inclusive'],
     categories: ['all-inclusive', 'family'],
   },
@@ -177,7 +181,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1796325354619cc8226f7866.48916407-b2Zopl9ymzYUwEPOXaqt6qbgotP0o5.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pool-with-palm-trees-sides-byKwAZ6PNPQp70rjuuPcZEybGHgRdn.jpg',
     ],
-    description: 'Nestled along the untouched southern coast of Mauritius, Heritage Awali Golf & Spa Resort invites guests into a world where African-inspired elegance meets Mauritian warmth. Upon arrival, guests are greeted with the rhythmic beats of djembes, setting the tone for an immersive cultural experience.',
+    description:
+      'Nestled along the untouched southern coast of Mauritius, Heritage Awali Golf & Spa Resort invites guests into a world where African-inspired elegance meets Mauritian warmth. Upon arrival, guests are greeted with the rhythmic beats of djembes, setting the tone for an immersive cultural experience.',
     highlights: ['African-inspired elegance', 'Championship golf course', 'World-class spa', 'All-inclusive dining'],
     categories: ['golf', 'family', 'all-inclusive'],
   },
@@ -199,7 +204,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leisure-beautiful-health-garden-landscape-buPXhULhorsvsl96kDOHAGToxM2eog.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/type-entertainment-complex-popular-resort-with-pools-water-parks-turkey-with-more-than-5-million-visitors-year-amara-dolce-vita-luxury-hotel-resort-tekirova-kemer-QvdJTS2p1FN0JOOhHzo91YWDqcYBkw.jpg',
     ],
-    description: 'Situated along the pristine shores of Belle Mare, The Residence Hotel is a sanctuary where time slows, and natural Mauritian beauty envelops you. The whitewashed facades and grand columns evoke a sense of grand, timeless elegance.',
+    description:
+      'Situated along the pristine shores of Belle Mare, The Residence Hotel is a sanctuary where time slows, and natural Mauritian beauty envelops you. The whitewashed facades and grand columns evoke a sense of grand, timeless elegance.',
     highlights: ['Colonial elegance', 'Belle Mare beach', 'Butler service', 'Award-winning restaurant'],
     categories: ['honeymoon'],
   },
@@ -221,7 +227,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hammocks-umbrellas-placed-row-4T6TQAytUAJ1kXJbt33gEbq2eHTDqw.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/silhouette-palm-tree-with-umbrella-u1M7JhC4sFDavsv5Rki2kcoqYKh3xP.jpg',
     ],
-    description: 'Tucked along the powdery white sands of Balaclava Bay, the InterContinental Resort Mauritius is a sanctuary where Indian Ocean dreams drift into reality. Imagine awakening to the gentle hush of tide against reef, the air rich with frangipani and sea breeze.',
+    description:
+      'Tucked along the powdery white sands of Balaclava Bay, the InterContinental Resort Mauritius is a sanctuary where Indian Ocean dreams drift into reality. Imagine awakening to the gentle hush of tide against reef, the air rich with frangipani and sea breeze.',
     highlights: ['Balaclava Bay location', 'Private beach', 'Multiple restaurants', 'Kids club'],
     categories: ['family', 'honeymoon'],
   },
@@ -243,7 +250,8 @@ export const hotels = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/san-diego-dawn-early-morning-with-palm-tree-silhouette-Ywk2ArZjkZptlkskQP0acX7ncR0Vfl.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pool-with-palm-trees-sides-byKwAZ6PNPQp70rjuuPcZEybGHgRdn.jpg',
     ],
-    description: 'Imagine a place where the dazzling Mauritian east coast meets pure serenity. That is Constance Belle Mare Plage. Here, 2 kilometers of pristine white sand invite you to unwind, a backdrop of 15 hectares of vibrant tropical gardens beckon you to relax.',
+    description:
+      'Imagine a place where the dazzling Mauritian east coast meets pure serenity. That is Constance Belle Mare Plage. Here, 2 kilometers of pristine white sand invite you to unwind, a backdrop of 15 hectares of vibrant tropical gardens beckon you to relax.',
     highlights: ['2km white sand beach', '2 championship golf courses', '15 hectares of gardens', '7 restaurants'],
     categories: ['golf', 'family'],
   },
@@ -265,7 +273,8 @@ export const hotels = [
       'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80',
     ],
-    description: "A true Mauritian icon, Shangri-La Le Touessrok Resort & Spa awaits on the pristine east coast of Mauritius, offering an unparalleled blend of luxury, tropical beauty and peace. Set against a backdrop of lush, emerald-green mountains and crystal-clear waters.",
+    description:
+      "A true Mauritian icon, Shangri-La Le Touessrok Resort & Spa awaits on the pristine east coast of Mauritius, offering an unparalleled blend of luxury, tropical beauty and peace. Set against a backdrop of lush, emerald-green mountains and crystal-clear waters.",
     highlights: ['Private islands access', 'Championship golf course', 'CHI The Spa', 'Overwater restaurant'],
     categories: ['honeymoon', 'golf'],
   },
@@ -287,7 +296,8 @@ export const hotels = [
       'https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80',
     ],
-    description: "The truly fabulous One&Only Le Saint Geran is a world-class property that redefines chic. This exquisite resort is tucked away on its own private peninsula, surrounded by 60 acres of lush tropical gardens on the beautiful Mauritian east coast.",
+    description:
+      "The truly fabulous One&Only Le Saint Geran is a world-class property that redefines chic. This exquisite resort is tucked away on its own private peninsula, surrounded by 60 acres of lush tropical gardens on the beautiful Mauritian east coast.",
     highlights: ['Private peninsula', '60 acres tropical gardens', 'World-class dining', 'One&Only Spa'],
     categories: ['honeymoon', 'wedding'],
   },
@@ -299,7 +309,8 @@ export const reviews = [
     name: 'Patrick & Victoria',
     hotel: "Shangri-La's Le Touessrok Resort & Spa",
     date: '09 Apr 2026',
-    quote: 'We have all had the most wonderful holiday. In fact, it was so good and so memorable, that we have decided to return to the same hotel in Mauritius next year.',
+    quote:
+      'We have all had the most wonderful holiday. In fact, it was so good and so memorable, that we have decided to return to the same hotel in Mauritius next year.',
     rating: 5,
   },
   {
@@ -307,7 +318,8 @@ export const reviews = [
     name: 'Caglayan & Adam',
     hotel: 'La Pirogue',
     date: '09 Apr 2026',
-    quote: 'Special thanks to the team for making everything smooth, warm and stress-free. We had a great experience from start to finish.',
+    quote:
+      'Special thanks to the team for making everything smooth, warm and stress-free. We had a great experience from start to finish.',
     rating: 5,
   },
   {
@@ -315,7 +327,8 @@ export const reviews = [
     name: 'Raymond & Gillian',
     hotel: 'Heritage Le Telfair Golf and Wellness Resort',
     date: '06 Apr 2026',
-    quote: 'From arriving in Mauritius until departure your service was excellent. Both taxi drivers were very professional and we had a seamless experience.',
+    quote:
+      'From arriving in Mauritius until departure your service was excellent. Both taxi drivers were very professional and we had a seamless experience.',
     rating: 5,
   },
   {
@@ -323,7 +336,8 @@ export const reviews = [
     name: 'Martin & Elaine',
     hotel: 'Maritim Resort & Spa Mauritius',
     date: '06 Apr 2026',
-    quote: 'Excellent service, quick support and great attention to detail throughout the trip. Samir did a fantastic job as always.',
+    quote:
+      'Excellent service, quick support and great attention to detail throughout the trip. Samir did a fantastic job as always.',
     rating: 5,
   },
 ]
@@ -331,11 +345,13 @@ export const reviews = [
 export const trustBadges = [
   {
     title: 'Outstanding Customer Service',
-    description: 'We know how important it is to be looked after properly, so we have taken the time to get the details right.',
+    description:
+      'We know how important it is to be looked after properly, so we have taken the time to get the details right.',
   },
   {
     title: 'Full Protection',
-    description: 'Fully bonded with ATOL, IATA & ABTA giving you the highest protection available in the holiday industry.',
+    description:
+      'Fully bonded with ATOL, IATA & ABTA giving you the highest protection available in the holiday industry.',
   },
   {
     title: 'Best Price Guarantee',
@@ -365,3 +381,5 @@ export const boardTypes = [
   'Full Board',
   'All Inclusive',
 ]
+
+

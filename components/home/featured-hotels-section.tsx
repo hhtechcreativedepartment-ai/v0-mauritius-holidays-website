@@ -59,11 +59,13 @@ export function FeaturedHotelsSection() {
       {/* Hotel Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredHotels.map((hotel) => (
-          <Card key={hotel.id} className="rounded-2xl border-0 overflow-hidden shadow-md bg-card group">
+          <Card key={hotel.id} className="rounded-2xl border-0 overflow-hidden shadow-md bg-card group h-full">
             <div className="relative h-56">
               <img
                 src={hotel.image}
                 alt={hotel.name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-4 left-4">
@@ -77,7 +79,7 @@ export function FeaturedHotelsSection() {
                 ))}
               </div>
             </div>
-            <CardContent className="p-5 space-y-4">
+            <CardContent className="p-5 space-y-4 h-full flex flex-col">
               <div>
                 <h3 className="font-semibold text-lg">{hotel.name}</h3>
                 <p className="text-sm text-muted-foreground">{hotel.board} &middot; {hotel.nights} nights</p>
@@ -85,7 +87,7 @@ export function FeaturedHotelsSection() {
               <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
                 {hotel.description}
               </p>
-              <div className="flex items-end justify-between pt-2">
+              <div className="mt-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-2">
                 <div>
                   <p className="text-xs text-muted-foreground line-through">
                     &pound;{hotel.originalPrice.toLocaleString()}pp
@@ -94,11 +96,11 @@ export function FeaturedHotelsSection() {
                     &pound;{hotel.price.toLocaleString()}<span className="text-sm font-normal text-muted-foreground">pp</span>
                   </p>
                 </div>
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="rounded-full" asChild>
+                <div className="flex flex-wrap gap-2">
+                  <Button variant="outline" size="sm" className="rounded-full flex-1 sm:flex-none" asChild>
                     <Link href={`/hotels/${hotel.slug}`}>View</Link>
                   </Button>
-                  <Button size="sm" className="rounded-full" asChild>
+                  <Button size="sm" className="rounded-full flex-1 sm:flex-none" asChild>
                     <Link href={`/contact?hotel=${hotel.slug}`}>Quote</Link>
                   </Button>
                 </div>

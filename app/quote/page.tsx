@@ -117,7 +117,7 @@ export default function QuotePage() {
                     <a href="/hotels">Browse Hotels</a>
                   </Button>
                   <Button asChild className="gap-2">
-                    <a href="tel:01onal000000">
+                    <a href="tel:02087324444">
                       <Phone className="w-4 h-4" />
                       Call Us Now
                     </a>
@@ -301,12 +301,12 @@ export default function QuotePage() {
                               <SelectValue placeholder="Select budget range" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="1500">Up to £1,500</SelectItem>
-                              <SelectItem value="2000">£1,500 - £2,000</SelectItem>
-                              <SelectItem value="2500">£2,000 - £2,500</SelectItem>
-                              <SelectItem value="3000">£2,500 - £3,000</SelectItem>
-                              <SelectItem value="4000">£3,000 - £4,000</SelectItem>
-                              <SelectItem value="5000">£4,000+</SelectItem>
+                              <SelectItem value="1500">Up to GBP 1,500</SelectItem>
+                              <SelectItem value="2000">GBP 1,500 - GBP 2,000</SelectItem>
+                              <SelectItem value="2500">GBP 2,000 - GBP 2,500</SelectItem>
+                              <SelectItem value="3000">GBP 2,500 - GBP 3,000</SelectItem>
+                              <SelectItem value="4000">GBP 3,000 - GBP 4,000</SelectItem>
+                              <SelectItem value="5000">GBP 4,000+</SelectItem>
                               <SelectItem value="flexible">Flexible / Surprise me</SelectItem>
                             </SelectContent>
                           </Select>
@@ -397,7 +397,7 @@ export default function QuotePage() {
                             <Input 
                               id="phone" 
                               type="tel" 
-                              placeholder="+44 7onal 000 000" 
+                              placeholder="+44 20 8732 4444" 
                               required
                               className="bg-background"
                             />
@@ -482,3 +482,4 @@ export default function QuotePage() {
     </div>
   )
 }
+

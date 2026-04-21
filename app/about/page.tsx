@@ -322,7 +322,7 @@ export default function AboutPage() {
               <Link href="/quote">Get a Free Quote</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="gap-2">
-              <Link href="tel:01onal">
+              <Link href="tel:02087324444">
                 <Phone className="w-4 h-4" />
                 Call Us Today
               </Link>
