@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Star, MapPin, Check, ChevronRight } from 'lucide-react'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { ChatbotWidget } from '@/components/chatbot-widget'
+import { ChatbotWidgetLoader } from '@/components/chatbot-widget-loader'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -292,7 +292,7 @@ export default async function CategoryPage({ params }: Props) {
         </section>
       </main>
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </>
   )
 }

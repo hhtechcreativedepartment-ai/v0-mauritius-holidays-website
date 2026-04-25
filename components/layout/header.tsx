@@ -51,7 +51,7 @@ export function Header() {
             
             {/* Phone Number */}
             <a 
-              href="tel:02087324444" 
+              href={`tel:${brand.phone.replace(/\s/g, '')}`} 
               className="flex items-center justify-center gap-2 shrink-0 sm:justify-end"
             >
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
@@ -59,9 +59,9 @@ export function Header() {
               </div>
               <div className="hidden sm:block text-right">
                 <p className="text-xs text-muted-foreground leading-none">Call now to book your holiday</p>
-                <p className="text-lg font-bold text-primary leading-tight">0208 732 4444</p>
+                <p className="text-lg font-bold text-primary leading-tight">{brand.phone}</p>
               </div>
-              <span className="sm:hidden text-sm font-bold text-primary">0208 732 4444</span>
+              <span className="sm:hidden text-sm font-bold text-primary">{brand.phone}</span>
             </a>
           </div>
         </div>
@@ -121,9 +121,9 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="outline" className="rounded-full gap-2" asChild>
-              <a href="tel:02035148222">
+              <a href={`tel:${brand.phoneAlt.replace(/\s/g, '')}`}>
                 <Phone className="w-4 h-4" />
-                0203 514 8222
+                {brand.phoneAlt}
               </a>
             </Button>
             <Button className="rounded-full" asChild>
@@ -180,9 +180,9 @@ export function Header() {
               </div>
               <div className="pt-4 space-y-2">
                 <Button variant="outline" className="w-full rounded-full gap-2" asChild>
-                  <a href="tel:02035148222">
+                  <a href={`tel:${brand.phoneAlt.replace(/\s/g, '')}`}>
                     <Phone className="w-4 h-4" />
-                    0203 514 8222
+                    {brand.phoneAlt}
                   </a>
                 </Button>
                 <Button className="w-full rounded-full" asChild>

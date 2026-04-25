@@ -94,22 +94,22 @@ export function Footer() {
             <p className="font-semibold mb-4">Contact Us</p>
             <div className="space-y-4 text-sm">
               <a 
-                href="tel:02087324444"
+                href={`tel:${brand.phone.replace(/\s/g, '')}`}
                 className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors break-all"
               >
                 <Phone className="w-4 h-4 text-accent" />
                 <div>
-                  <span className="block font-semibold text-lg">0208 732 4444</span>
+                  <span className="block font-semibold text-lg">{brand.phone}</span>
                   <span className="text-xs text-primary-foreground/60">Main Line</span>
                 </div>
               </a>
               <a 
-                href="tel:02035148222"
+                href={`tel:${brand.phoneAlt.replace(/\s/g, '')}`}
                 className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors break-all"
               >
                 <Phone className="w-4 h-4 text-accent" />
                 <div>
-                  <span className="block font-semibold">0203 514 8222</span>
+                  <span className="block font-semibold">{brand.phoneAlt}</span>
                   <span className="text-xs text-primary-foreground/60">Enquiries</span>
                 </div>
               </a>

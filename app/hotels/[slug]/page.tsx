@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { HotelDetail } from '@/components/hotels/hotel-detail'
-import { ChatbotWidget } from '@/components/chatbot-widget'
+import { ChatbotWidgetLoader } from '@/components/chatbot-widget-loader'
 import { hotels } from '@/lib/data'
 
 interface Props {
@@ -47,7 +47,7 @@ export default async function HotelPage({ params }: Props) {
         <HotelDetail hotel={hotel} />
       </main>
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </>
   )
 }

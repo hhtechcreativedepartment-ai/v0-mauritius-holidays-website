@@ -2,7 +2,7 @@
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { ChatbotWidget } from "@/components/chatbot-widget"
+import { ChatbotWidgetLoader } from "@/components/chatbot-widget-loader"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
+import { brand } from "@/lib/data"
 import { 
   Select,
   SelectContent,
@@ -117,7 +118,7 @@ export default function QuotePage() {
                     <a href="/hotels">Browse Hotels</a>
                   </Button>
                   <Button asChild className="gap-2">
-                    <a href="tel:02087324444">
+                    <a href={`tel:${brand.phone.replace(/\s/g, '')}`}>
                       <Phone className="w-4 h-4" />
                       Call Us Now
                     </a>
@@ -478,7 +479,7 @@ export default function QuotePage() {
       </section>
 
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </div>
   )
 }

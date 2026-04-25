@@ -7,7 +7,7 @@ import { TrustSection } from '@/components/home/trust-section'
 import { ReviewsSection } from '@/components/home/reviews-section'
 import { ExploreSection } from '@/components/home/explore-section'
 import { NewsletterSection } from '@/components/home/newsletter-section'
-import { ChatbotWidget } from '@/components/chatbot-widget'
+import { ChatbotWidgetLoader } from '@/components/chatbot-widget-loader'
 
 export default function HomePage() {
   return (
@@ -23,7 +23,7 @@ export default function HomePage() {
         <NewsletterSection />
       </main>
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </>
   )
 }

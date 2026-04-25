@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { brand } from "@/lib/data"
 import { 
   Users, 
   Award, 
@@ -322,10 +323,10 @@ export default function AboutPage() {
               <Link href="/quote">Get a Free Quote</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="gap-2">
-              <Link href="tel:02087324444">
+              <a href={`tel:${brand.phone.replace(/\s/g, '')}`}>
                 <Phone className="w-4 h-4" />
                 Call Us Today
-              </Link>
+              </a>
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">

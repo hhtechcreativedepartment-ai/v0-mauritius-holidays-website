@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { HotelsListing } from '@/components/hotels/hotels-listing'
-import { ChatbotWidget } from '@/components/chatbot-widget'
+import { ChatbotWidgetLoader } from '@/components/chatbot-widget-loader'
 import { Spinner } from '@/components/ui/spinner'
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function HotelsPage() {
         </Suspense>
       </main>
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </>
   )
 }
