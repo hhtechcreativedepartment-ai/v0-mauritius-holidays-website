@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { ChatbotWidget } from '@/components/chatbot-widget'
+import { ChatbotWidgetLoader } from '@/components/chatbot-widget-loader'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -112,7 +112,7 @@ export default function ExplorePage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative h-[50vh] md:h-[60vh]">
+        <section className="relative h-[46vh] sm:h-[50vh] md:h-[60vh]">
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aesthetic-summer-holidays-P0kQqXt9b6jPL1lg6rzd21RZ2zeJz9.jpg"
             alt="Overwater villas at sunset in Mauritius"
@@ -124,10 +124,10 @@ export default function ExplorePage() {
               <Badge className="rounded-full px-4 py-1 bg-accent text-accent-foreground mb-4">
                 Island Guide
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-3">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white mb-3">
                 Explore Mauritius
               </h1>
-              <p className="text-lg text-white/80 max-w-2xl">
+              <p className="text-base sm:text-lg text-white/80 max-w-2xl">
                 &ldquo;You gather the idea that Mauritius was made first and then heaven was copied after Mauritius.&rdquo; — Mark Twain
               </p>
             </div>
@@ -137,21 +137,21 @@ export default function ExplorePage() {
         {/* Quick Stats */}
         <section className="bg-secondary/50 py-8">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">12hr</p>
+                <p className="text-2xl font-bold text-accent sm:text-3xl">12hr</p>
                 <p className="text-sm text-muted-foreground mt-1">Flight from UK</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">25°C</p>
+                <p className="text-2xl font-bold text-accent sm:text-3xl">25°C</p>
                 <p className="text-sm text-muted-foreground mt-1">Average Temperature</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">+4hr</p>
+                <p className="text-2xl font-bold text-accent sm:text-3xl">+4hr</p>
                 <p className="text-sm text-muted-foreground mt-1">GMT Time Zone</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">330km</p>
+                <p className="text-2xl font-bold text-accent sm:text-3xl">330km</p>
                 <p className="text-sm text-muted-foreground mt-1">Of Coastline</p>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function ExplorePage() {
 
         {/* Main Sections */}
         <section className="max-w-7xl mx-auto px-4 md:px-6 pb-12 md:pb-16">
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16">
             {sections.map((section, index) => (
               <div
                 key={section.id}
@@ -184,7 +184,7 @@ export default function ExplorePage() {
                 }`}
               >
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="rounded-3xl overflow-hidden shadow-lg h-72 md:h-96">
+                  <div className="h-64 rounded-3xl overflow-hidden shadow-lg md:h-96">
                     <img
                       src={section.image}
                       alt={section.title}
@@ -268,7 +268,7 @@ export default function ExplorePage() {
         </section>
       </main>
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </>
   )
 }

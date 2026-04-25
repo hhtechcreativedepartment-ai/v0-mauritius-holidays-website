@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { ChatbotWidget } from '@/components/chatbot-widget'
+import { ChatbotWidgetLoader } from '@/components/chatbot-widget-loader'
 import { hotels, brand } from '@/lib/data'
 
 export const metadata: Metadata = {
@@ -62,21 +62,21 @@ export default function OffersPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
           </div>
           
-          <div className="relative max-w-7xl mx-auto px-4 md:px-6 py-20 md:py-28">
+          <div className="relative max-w-7xl mx-auto px-4 md:px-6 py-16 sm:py-20 md:py-28">
             <div className="max-w-3xl">
               <Badge className="mb-6 bg-white/10 text-white border-white/20 rounded-full px-4 py-1.5">
                 <Percent className="w-4 h-4 mr-2" />
                 Exclusive Savings
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-5 sm:mb-6 leading-tight">
                 Special Offers &{' '}
                 <span className="text-cyan-300">Exclusive Deals</span>
               </h1>
-              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
                 Discover incredible savings on handpicked Mauritius holidays. From flash sales to free night offers, 
                 find your perfect deal and save up to 45% on luxury escapes.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                 <Button size="lg" className="h-12 px-8 rounded-full bg-white text-primary hover:bg-white/90" asChild>
                   <Link href="#deals">View All Deals</Link>
                 </Button>
@@ -89,9 +89,9 @@ export default function OffersPage() {
         </section>
 
         {/* Featured Offer Cards */}
-        <section className="py-16 md:py-20 bg-secondary/30">
+        <section className="py-12 md:py-20 bg-secondary/30">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid gap-5 md:grid-cols-3 md:gap-6">
               {featuredOffers.map((offer) => (
                 <Card 
                   key={offer.id}
@@ -126,7 +126,7 @@ export default function OffersPage() {
         </section>
 
         {/* Deal Hotels Grid */}
-        <section id="deals" className="py-16 md:py-24">
+        <section id="deals" className="py-12 md:py-24">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <Badge className="mb-4 rounded-full px-4">Hot Deals</Badge>
@@ -138,7 +138,7 @@ export default function OffersPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
               {offerHotels.map((hotel) => {
                 const savings = hotel.originalPrice - hotel.price
                 const savingsPercent = Math.round((savings / hotel.originalPrice) * 100)
@@ -221,9 +221,9 @@ export default function OffersPage() {
         </section>
 
         {/* Why Book Section */}
-        <section className="py-16 md:py-20 bg-secondary/30">
+        <section className="py-12 md:py-20 bg-secondary/30">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 items-center">
               <div>
                 <Badge className="mb-4 rounded-full px-4">Why Book With Us</Badge>
                 <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-6">
@@ -336,7 +336,7 @@ export default function OffersPage() {
         </section>
       </main>
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </div>
   )
 }

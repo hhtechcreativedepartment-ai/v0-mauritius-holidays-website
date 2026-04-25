@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Phone, Menu, X, ChevronDown } from 'lucide-react'
@@ -23,29 +24,35 @@ export function Header() {
       {/* Top Bar - Trust Badges */}
       <div className="bg-white border-b border-border/50">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-2">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             {/* Trustpilot */}
-            <a href="https://www.trustpilot.com" target="_blank" rel="noopener noreferrer" className="shrink-0">
-              <img 
+            <a href="https://www.trustpilot.com" target="_blank" rel="noopener noreferrer" className="shrink-0 self-center sm:self-auto">
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Header_trustpilot-Q7ZlVwiqaXh22Zc1UPaQGj6XMeBesl.webp"
                 alt="Trustpilot - 5.0 Excellent"
-                className="h-8 sm:h-10 w-auto"
+                width={180}
+                height={40}
+                sizes="(max-width: 640px) 120px, 180px"
+                className="h-8 w-auto sm:h-10"
               />
             </a>
             
             {/* THD Logo - Part of */}
             <div className="hidden sm:block shrink-0">
-              <img 
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/THD-Logo-rQ7YhEEy1pDvptmhiEtGni0ICBnAha.png"
                 alt="Part of Tropical Holidays Direct"
-                className="h-10 sm:h-12 w-auto"
+                width={176}
+                height={48}
+                sizes="176px"
+                className="h-10 w-auto sm:h-12"
               />
             </div>
             
             {/* Phone Number */}
             <a 
               href="tel:02087324444" 
-              className="flex items-center gap-2 shrink-0"
+              className="flex items-center justify-center gap-2 shrink-0 sm:justify-end"
             >
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <Phone className="w-4 h-4 text-white" />
@@ -62,13 +69,17 @@ export function Header() {
 
       {/* Main Header */}
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-border/50">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 sm:py-4 flex items-center justify-between gap-3">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <img 
+          <Link href="/" className="flex items-center min-w-0">
+            <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-header-KfdQWrgO3VMSHZRjpIt5bYHlIEhbCU.webp"
               alt="Mauritius Holidays Direct"
-              className="h-10 sm:h-12 w-auto"
+              width={240}
+              height={48}
+              priority
+              sizes="(max-width: 640px) 160px, 240px"
+              className="h-9 w-auto sm:h-12"
             />
           </Link>
 
@@ -122,7 +133,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-secondary/50 transition-colors"
+            className="lg:hidden shrink-0 p-2 rounded-lg hover:bg-secondary/50 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -133,7 +144,7 @@ export function Header() {
         {/* Mobile Navigation */}
         {mobileOpen && (
           <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl">
-            <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
+            <div className="max-w-7xl mx-auto px-4 py-4 space-y-2 max-h-[calc(100vh-7rem)] overflow-y-auto">
               {navItems.map((item) => (
                 <Link
                   key={item.name}

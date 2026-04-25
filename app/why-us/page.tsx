@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Shield, Plane, Users, Star, BadgeCheck, Headphones, CreditCard, Award, Heart, MapPin, Clock, Gift, CheckCircle, ExternalLink } from 'lucide-react'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { ChatbotWidget } from '@/components/chatbot-widget'
+import { ChatbotWidgetLoader } from '@/components/chatbot-widget-loader'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -108,7 +108,7 @@ export default function WhyUsPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative h-[50vh] md:h-[55vh]">
+        <section className="relative h-[46vh] sm:h-[50vh] md:h-[55vh]">
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/person-traveling-enjoying-their-vacation-996Oe6JVNydpheyK5WCnLf19saqtTk.jpg"
             alt="Traveler enjoying scenic Mauritius views"
@@ -120,10 +120,10 @@ export default function WhyUsPage() {
               <Badge className="rounded-full px-4 py-1 bg-accent text-accent-foreground mb-4">
                 Award-Winning Service
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-3">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white mb-3">
                 Why Book With Us
               </h1>
-              <p className="text-lg text-white/80 max-w-2xl">
+              <p className="text-base sm:text-lg text-white/80 max-w-2xl">
                 Treat yourself to a luxury Mauritius holiday with the UK&apos;s trusted specialists.
               </p>
             </div>
@@ -185,14 +185,14 @@ export default function WhyUsPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {[
               { name: 'ATOL', description: 'Air Travel Organiser\'s Licence', licence: 'No. 5744' },
               { name: 'IATA', description: 'International Air Transport Association', licence: 'Member' },
               { name: 'ABTA', description: 'Association of British Travel Agents', licence: 'Member' },
             ].map((badge) => (
-              <Card key={badge.name} className="rounded-2xl border-0 shadow-sm">
-                <CardContent className="p-6 flex items-center gap-4">
+              <Card key={badge.name} className="w-full rounded-2xl border-0 shadow-sm sm:w-auto">
+                <CardContent className="p-5 sm:p-6 flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center">
                     <span className="text-lg font-bold">{badge.name}</span>
                   </div>
@@ -251,7 +251,7 @@ export default function WhyUsPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-5 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {journeySteps.map((step) => (
               <div key={step.step} className="text-center">
                 <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
@@ -346,7 +346,7 @@ export default function WhyUsPage() {
         </section>
       </main>
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </>
   )
 }

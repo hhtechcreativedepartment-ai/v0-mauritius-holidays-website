@@ -92,7 +92,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-[78vh] overflow-hidden sm:min-h-[84vh] lg:min-h-[90vh]">
+      <section className="relative min-h-[72vh] overflow-hidden sm:min-h-[84vh] lg:min-h-[90vh]">
         {/* Cinematic Background */}
         <div className="absolute inset-0">
         {previousImage !== null && (
@@ -142,10 +142,10 @@ export function HeroSection() {
       </div>
 
         {/* Main Content */}
-        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col px-4 md:px-6 sm:min-h-[84vh] lg:min-h-[90vh]">
+        <div className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-7xl flex-col px-4 md:px-6 sm:min-h-[84vh] lg:min-h-[90vh]">
         {/* Top Trust Bar */}
-        <div className="pt-5 pb-4 md:pt-6 md:pb-5">
-          <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center text-sm text-white/90">
+        <div className="pt-4 pb-4 md:pt-6 md:pb-5">
+          <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-xs text-white/90 sm:text-sm">
             <div className="flex items-center gap-2">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -163,7 +163,7 @@ export function HeroSection() {
         </div>
 
         {/* Hero Content */}
-        <div className="flex flex-1 items-center justify-center pt-6 md:pt-8 lg:pt-10">
+        <div className="flex flex-1 items-center justify-center pt-5 md:pt-8 lg:pt-10">
           <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
             {/* Animated Welcome Badge */}
             <div className="mb-5 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 py-2.5 text-white backdrop-blur-md animate-fade-in md:mb-7">
@@ -174,7 +174,7 @@ export function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="mx-auto mb-6 max-w-5xl text-4xl font-serif font-semibold leading-[1.02] tracking-tight text-white text-balance drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[7.5rem]">
+            <h1 className="mx-auto mb-5 max-w-5xl text-[2.8rem] font-serif font-semibold leading-[0.98] tracking-tight text-white text-balance drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[7.5rem]">
               Discover the Magic of{' '}
               <span className="relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-sky-200 via-cyan-100 to-blue-300 bg-clip-text text-transparent">
@@ -185,16 +185,16 @@ export function HeroSection() {
             </h1>
 
             {/* Subheadline */}
-            <p className="mx-auto mb-8 max-w-3xl text-lg font-light leading-relaxed text-white/95 drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] sm:text-xl md:mb-10 md:text-2xl">
+            <p className="mx-auto mb-8 max-w-3xl text-base font-light leading-relaxed text-white/95 drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] sm:text-xl md:mb-10 md:text-2xl">
               Award-winning specialists crafting bespoke luxury holidays to the Indian Ocean&apos;s most enchanting island. 
               Your dream escape, fully protected and personally tailored.
             </p>
 
             {/* CTA Buttons */}
-            <div className="mb-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center md:mb-10">
+            <div className="mb-6 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center md:mb-10">
               <Button 
                 size="lg" 
-                className="h-14 w-full sm:w-auto px-8 md:px-10 rounded-full text-base font-medium bg-white text-primary hover:bg-white/90 shadow-2xl shadow-white/20 group"
+                className="h-12 w-full sm:w-auto px-6 md:px-10 rounded-full text-base font-medium bg-white text-primary hover:bg-white/90 shadow-2xl shadow-white/20 group"
                 asChild
               >
                 <Link href="/quote">
@@ -204,7 +204,7 @@ export function HeroSection() {
               </Button>
               <Button 
                 size="lg" 
-                className="h-14 w-full sm:w-auto px-8 md:px-10 rounded-full text-base font-medium bg-primary text-white border-2 border-white/40 hover:bg-primary/90 shadow-xl"
+                className="h-12 w-full sm:w-auto px-6 md:px-10 rounded-full text-base font-medium bg-primary text-white border-2 border-white/40 hover:bg-primary/90 shadow-xl"
                 asChild
               >
                 <Link href="/hotels">
@@ -218,7 +218,7 @@ export function HeroSection() {
         </div>
 
         {/* Hero Footer */}
-        <div className="mt-4 pb-12 md:mt-6 md:pb-14 lg:pb-16">
+        <div className="mt-2 pb-8 md:mt-6 md:pb-14 lg:pb-16">
           <div className="mx-auto hidden w-full max-w-6xl justify-center xl:flex">
             <div className="flex flex-col items-center gap-2 px-5 py-2.5 text-white/65 animate-bounce">
               <span className="text-xs uppercase tracking-[0.24em]">Explore</span>
@@ -248,7 +248,7 @@ export function HeroSection() {
         `}</style>
       </section>
 
-      <section className="relative z-20 bg-background px-4 py-8 md:px-6 md:py-10">
+      <section className="relative z-20 bg-background px-4 py-6 md:px-6 md:py-10">
         <div className="mx-auto w-full max-w-6xl">
           <div className="relative">
             <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-r from-gray-500/20 via-gray-600/20 to-gray-500/20 blur-xl opacity-70" />
@@ -258,18 +258,18 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/78 to-slate-100/55" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-600/5 to-transparent" />
 
-              <div className="relative p-5 md:p-6 lg:p-7">
+              <div className="relative p-4 sm:p-5 md:p-6 lg:p-7">
                 <div className="mb-5 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
                   <div className="text-center lg:text-left">
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-800 md:text-[2rem]">Find Your Perfect Holiday</h2>
-                    <p className="mt-1.5 text-base text-slate-600">Search 40+ handpicked Mauritius hotels</p>
+                    <h2 className="text-xl font-bold tracking-tight text-slate-800 sm:text-2xl md:text-[2rem]">Find Your Perfect Holiday</h2>
+                    <p className="mt-1.5 text-sm text-slate-600 sm:text-base">Search 40+ handpicked Mauritius hotels</p>
                   </div>
                   <div className="flex flex-col items-center gap-3 lg:items-end">
                     <div className="flex w-full flex-col gap-2 text-center sm:w-auto sm:flex-row sm:items-center sm:justify-end sm:gap-3 sm:text-left">
-                      <span className="text-sm font-medium text-slate-500">or call us:</span>
+                      <span className="text-xs font-medium text-slate-500 sm:text-sm">or call us:</span>
                       <a
                         href={`tel:${brand.phone.replace(/\s/g, '')}`}
-                        className="flex items-center justify-center gap-3 text-xl font-bold text-slate-800 transition-colors hover:text-accent sm:justify-start"
+                        className="flex items-center justify-center gap-3 text-lg font-bold text-slate-800 transition-colors hover:text-accent sm:justify-start sm:text-xl"
                       >
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10">
                           <Phone className="h-4 w-4 text-accent" />
@@ -277,7 +277,7 @@ export function HeroSection() {
                         {brand.phone}
                       </a>
                     </div>
-                    <Badge className="mx-auto w-fit rounded-full border-0 bg-gradient-to-r from-accent to-slate-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 sm:mx-0">
+                    <Badge className="mx-auto w-fit rounded-full border-0 bg-gradient-to-r from-accent to-slate-600 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-accent/25 sm:mx-0 sm:px-5 sm:py-2.5 sm:text-sm">
                       Best Price Guaranteed
                     </Badge>
                   </div>
@@ -288,7 +288,7 @@ export function HeroSection() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-[0.18em] text-slate-700">Departure Month</label>
                       <Select value={departureMonth} onValueChange={setDepartureMonth}>
-                        <SelectTrigger className="h-[52px] rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
+                        <SelectTrigger className="h-12 rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
                           <SelectValue placeholder="Select month" />
                         </SelectTrigger>
                         <SelectContent>
@@ -301,7 +301,7 @@ export function HeroSection() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-[0.18em] text-slate-700">Travellers</label>
                       <Select value={guests} onValueChange={setGuests}>
-                        <SelectTrigger className="h-[52px] rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
+                        <SelectTrigger className="h-12 rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
                           <SelectValue placeholder="Select guests" />
                         </SelectTrigger>
                         <SelectContent>
@@ -316,7 +316,7 @@ export function HeroSection() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-[0.18em] text-slate-700">Holiday Type</label>
                       <Select value={holidayType} onValueChange={setHolidayType}>
-                        <SelectTrigger className="h-[52px] rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
+                        <SelectTrigger className="h-12 rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
                           <SelectValue placeholder="Select type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -329,7 +329,7 @@ export function HeroSection() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-[0.18em] text-slate-700">UK Airport</label>
                       <Select value={airport} onValueChange={setAirport}>
-                        <SelectTrigger className="h-[52px] rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
+                        <SelectTrigger className="h-12 rounded-2xl border-2 border-slate-200 bg-white/70 px-4 text-slate-800 shadow-sm transition-all hover:border-accent/30 hover:bg-white">
                           <SelectValue placeholder="Select airport" />
                         </SelectTrigger>
                         <SelectContent>
@@ -345,7 +345,7 @@ export function HeroSection() {
                     <Button
                       onClick={handleSearch}
                       size="lg"
-                      className="h-[52px] w-full gap-3 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-700 px-7 text-base font-semibold shadow-xl shadow-slate-800/20 transition-all hover:from-slate-900 hover:to-slate-800 hover:shadow-2xl hover:shadow-slate-800/30 sm:w-auto"
+                      className="h-12 w-full gap-3 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-700 px-6 text-sm font-semibold shadow-xl shadow-slate-800/20 transition-all hover:from-slate-900 hover:to-slate-800 hover:shadow-2xl hover:shadow-slate-800/30 sm:w-auto sm:px-7 sm:text-base"
                     >
                       <Search className="h-5 w-5" />
                       Search Holidays
@@ -382,7 +382,7 @@ export function HeroSection() {
 
       <section className="bg-background py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { value: '15+', label: 'Years Experience' },
               { value: '1,000+', label: 'Happy Couples' },
@@ -393,8 +393,8 @@ export function HeroSection() {
                 key={stat.label}
                 className="rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-800 px-5 py-6 text-center shadow-[0_14px_40px_rgba(15,23,42,0.12)]"
               >
-                <div className="text-4xl font-bold tracking-tight text-white">{stat.value}</div>
-                <div className="mt-2 text-base font-medium text-white/75">{stat.label}</div>
+                <div className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{stat.value}</div>
+                <div className="mt-2 text-sm font-medium text-white/75 sm:text-base">{stat.label}</div>
               </div>
             ))}
           </div>

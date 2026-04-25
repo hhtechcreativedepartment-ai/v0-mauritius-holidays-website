@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { brand, categories } from '@/lib/data'
@@ -7,13 +8,16 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-14">
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10">
+        <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="block">
-              <img 
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-header-KfdQWrgO3VMSHZRjpIt5bYHlIEhbCU.webp"
                 alt="Mauritius Holidays Direct"
+                width={200}
+                height={40}
+                sizes="200px"
                 className="h-10 w-auto brightness-0 invert"
               />
             </Link>
@@ -24,23 +28,32 @@ export function Footer() {
             
             {/* Part of THD */}
             <div className="pt-2">
-              <img 
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/THD-Logo-rQ7YhEEy1pDvptmhiEtGni0ICBnAha.png"
                 alt="Part of Tropical Holidays Direct"
+                width={176}
+                height={48}
+                sizes="176px"
                 className="h-12 w-auto brightness-0 invert opacity-80"
               />
             </div>
             
             {/* Trust Badges */}
-            <div className="flex items-center gap-4 pt-4">
-              <img 
+            <div className="flex flex-wrap items-center gap-4 pt-4">
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-ectSacWQw1bA2fJRel7kkWQ5KDKpVP.webp"
                 alt="ATOL Protected 5744"
+                width={72}
+                height={56}
+                sizes="72px"
                 className="h-14 w-auto brightness-0 invert"
               />
-              <img 
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-7VpDM2SkSFYocinHv33JfXJFLmdL0A.webp"
                 alt="ABTA J5618/W5490"
+                width={84}
+                height={48}
+                sizes="84px"
                 className="h-12 w-auto brightness-0 invert"
               />
             </div>
@@ -82,7 +95,7 @@ export function Footer() {
             <div className="space-y-4 text-sm">
               <a 
                 href="tel:02087324444"
-                className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors break-all"
               >
                 <Phone className="w-4 h-4 text-accent" />
                 <div>
@@ -92,7 +105,7 @@ export function Footer() {
               </a>
               <a 
                 href="tel:02035148222"
-                className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors break-all"
               >
                 <Phone className="w-4 h-4 text-accent" />
                 <div>
@@ -123,9 +136,9 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/60">
+          <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left text-sm text-primary-foreground/60">
             <p>&copy; {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-end md:gap-6">
               <Link href="/terms" className="hover:text-primary-foreground transition-colors">Terms & Conditions</Link>
               <Link href="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
               <Link href="/atol" className="hover:text-primary-foreground transition-colors">ATOL Protection</Link>

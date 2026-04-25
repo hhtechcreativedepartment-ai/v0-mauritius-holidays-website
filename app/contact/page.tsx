@@ -2,7 +2,7 @@
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { ChatbotWidget } from "@/components/chatbot-widget"
+import { ChatbotWidgetLoader } from "@/components/chatbot-widget-loader"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -100,7 +100,7 @@ export default function ContactPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
+      <section className="relative py-16 md:py-24 lg:py-32 bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/beautiful-luxury-outdoor-swimming-pool-hotel-resort-GL2S39UkbjMGQbc1eaCVMXQTMgU3Qw.jpg')] bg-cover bg-center opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-primary/40" />
         <div className="container mx-auto px-4 relative z-10">
@@ -108,10 +108,10 @@ export default function ContactPage() {
             <Badge className="mb-6 bg-accent/20 text-accent border-accent/30 hover:bg-accent/30">
               Get in Touch
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground mb-6 text-balance">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground mb-5 sm:mb-6 text-balance">
               We&apos;d Love to Hear From You
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 leading-relaxed">
               Our friendly Mauritius experts are here to help plan your perfect holiday. 
               No pressure, no obligation - just honest advice.
             </p>
@@ -120,9 +120,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-12 bg-card border-b border-border">
+      <section className="py-10 md:py-12 bg-card border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5 items-stretch">
             {contactMethods.map((method) => (
               <a 
                 key={method.title}
@@ -143,7 +143,7 @@ export default function ContactPage() {
               </a>
             ))}
             {/* Office Info Card */}
-            <Card className="bg-primary text-primary-foreground col-span-2 lg:col-span-1 flex flex-col">
+            <Card className="bg-primary text-primary-foreground sm:col-span-2 xl:col-span-1 flex flex-col">
               <CardContent className="p-5 text-center flex flex-col justify-center flex-1">
                 <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-3">
                   <MapPin className="w-6 h-6 text-accent" />
@@ -167,7 +167,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 lg:py-28">
+      <section className="py-14 md:py-20 lg:py-28">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Form */}
@@ -318,7 +318,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 lg:py-28 bg-secondary/50">
+      <section className="py-14 md:py-20 lg:py-28 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">Visit Us</Badge>
@@ -329,7 +329,7 @@ export default function ContactPage() {
               We&apos;re based in the heart of London. Pop in for a chat about your dream Mauritius holiday.
             </p>
           </div>
-          <div className="aspect-[21/9] bg-muted rounded-2xl overflow-hidden relative">
+          <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] bg-muted rounded-2xl overflow-hidden relative">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.542166345!2d-0.127758!3d51.507351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c7c7eb9be3%3A0x3918653583725b56!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1234567890"
               width="100%"
@@ -345,7 +345,7 @@ export default function ContactPage() {
       </section>
 
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </div>
   )
 }

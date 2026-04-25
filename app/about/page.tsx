@@ -2,7 +2,7 @@
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { ChatbotWidget } from "@/components/chatbot-widget"
+import { ChatbotWidgetLoader } from "@/components/chatbot-widget-loader"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -92,7 +92,7 @@ export default function AboutPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
+      <section className="relative py-16 md:py-24 lg:py-32 bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/beautiful-outdoor-view-with-umbrella-chair-around-swimming-pool-luxury-hotel-64IgOh9d0eMgD56IF9CdZqJRnBSb1O.jpg')] bg-cover bg-center opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-primary/30" />
         <div className="container mx-auto px-4 relative z-10">
@@ -100,15 +100,15 @@ export default function AboutPage() {
             <Badge className="mb-6 bg-accent/20 text-accent border-accent/30 hover:bg-accent/30">
               Since 1999
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground mb-6 text-balance">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground mb-5 sm:mb-6 text-balance">
               Your Mauritius Holiday Specialists
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-8">
               For over 25 years, we&apos;ve been crafting unforgettable Mauritius holidays. 
               Our passion, expertise, and personal service make us the UK&apos;s trusted choice 
               for this beautiful Indian Ocean paradise.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Link href="/contact">Get in Touch</Link>
               </Button>
@@ -121,9 +121,9 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-card border-b border-border">
+      <section className="py-12 md:py-16 bg-card border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent mb-4">
@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 lg:py-28">
+      <section className="py-14 md:py-20 lg:py-28">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border border-border max-w-xs">
+              <div className="absolute bottom-4 left-4 right-4 max-w-none rounded-xl border border-border bg-card p-4 shadow-lg sm:-bottom-6 sm:-left-6 sm:right-auto sm:max-w-xs sm:p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <Award className="w-8 h-8 text-accent" />
                   <span className="font-semibold text-foreground">Award Winning</span>
@@ -190,7 +190,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 lg:py-28 bg-secondary/50">
+      <section className="py-14 md:py-20 lg:py-28 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">Our Values</Badge>
@@ -201,7 +201,7 @@ export default function AboutPage() {
               We&apos;re not just another travel agency. Here&apos;s why thousands choose us for their Mauritius escape.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-8">
             {values.map((value) => (
               <Card key={value.title} className="bg-card border-border hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
@@ -218,7 +218,7 @@ export default function AboutPage() {
       </section>
 
       {/* Meet the Team */}
-      <section className="py-20 lg:py-28">
+      <section className="py-14 md:py-20 lg:py-28">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">Our Team</Badge>
@@ -229,7 +229,7 @@ export default function AboutPage() {
               Real people who genuinely care about your holiday. No scripts, no call centres - just friendly expertise.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-8">
             {team.map((member) => (
               <Card key={member.name} className="bg-card border-border overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-square overflow-hidden">
@@ -251,7 +251,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
+      <section className="py-14 md:py-20 lg:py-28 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-accent/20 text-accent border-accent/30">Our Journey</Badge>
@@ -285,7 +285,7 @@ export default function AboutPage() {
       </section>
 
       {/* Accreditations */}
-      <section className="py-20 lg:py-28">
+      <section className="py-14 md:py-20 lg:py-28">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">Fully Protected</Badge>
@@ -296,9 +296,9 @@ export default function AboutPage() {
               Your holiday is fully protected by industry-leading accreditations.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-16">
             {['ATOL Protected', 'IATA Member', 'ABTA Bonded', 'Trustpilot Excellent'].map((accreditation) => (
-              <div key={accreditation} className="flex items-center gap-3 bg-card px-6 py-4 rounded-lg border border-border">
+              <div key={accreditation} className="flex w-full items-center gap-3 rounded-lg border border-border bg-card px-4 py-4 sm:w-auto sm:px-6">
                 <CheckCircle2 className="w-5 h-5 text-accent" />
                 <span className="font-medium text-foreground">{accreditation}</span>
               </div>
@@ -308,7 +308,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-accent/10">
+      <section className="py-14 md:py-20 lg:py-28 bg-accent/10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
             Ready to Start Your Mauritius Journey?
@@ -342,7 +342,7 @@ export default function AboutPage() {
       </section>
 
       <Footer />
-      <ChatbotWidget />
+      <ChatbotWidgetLoader />
     </div>
   )
 }
