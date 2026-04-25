@@ -47,7 +47,7 @@ const trustItems = [
 
 export function TrustSection() {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
+    <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-10">
       <div className="text-center max-w-2xl mx-auto mb-10">
         <Badge variant="outline" className="rounded-full px-4 py-1 mb-4">
           Why Book With Us

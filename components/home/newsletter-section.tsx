@@ -19,7 +19,7 @@ export function NewsletterSection() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
+    <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-10">
       <Card className="rounded-3xl border-0 bg-gradient-to-br from-accent/10 via-background to-secondary/50 shadow-lg overflow-hidden">
         <CardContent className="p-8 md:p-12">
           <div className="max-w-2xl mx-auto text-center space-y-6">

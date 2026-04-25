@@ -15,7 +15,7 @@ const exploreCards = [
 
 export function ExploreSection() {
   return (
-    <section className="bg-primary text-primary-foreground py-12 md:py-20">
+    <section className="bg-primary py-8 text-primary-foreground md:py-10">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           {/* Left Content */}

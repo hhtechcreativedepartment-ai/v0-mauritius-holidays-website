@@ -7,7 +7,7 @@ import { reviews, brand } from '@/lib/data'
 
 export function ReviewsSection() {
   return (
-    <section className="bg-secondary/50 py-12 md:py-16">
+    <section className="bg-secondary/50 py-8 md:py-10">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Header with Trustpilot */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">

@@ -14,7 +14,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function CategoriesSection() {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
+    <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-10">
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
         {categories.map((category) => {
           const Icon = iconMap[category.id] || Sparkles

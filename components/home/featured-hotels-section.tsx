@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -25,7 +26,7 @@ export function FeaturedHotelsSection() {
     : featuredHotels.filter((h) => h.board.toLowerCase().includes(activeFilter))
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
+    <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-10">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
         <div className="max-w-2xl space-y-3">
@@ -61,11 +62,11 @@ export function FeaturedHotelsSection() {
         {filteredHotels.map((hotel) => (
           <Card key={hotel.id} className="rounded-2xl border-0 overflow-hidden shadow-md bg-card group h-full">
             <div className="relative h-56">
-              <img
+              <Image
                 src={hotel.image}
                 alt={hotel.name}
-                loading="lazy"
-                decoding="async"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-4 left-4">
