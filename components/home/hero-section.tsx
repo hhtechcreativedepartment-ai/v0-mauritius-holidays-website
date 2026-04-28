@@ -44,7 +44,6 @@ export function HeroSection() {
   const router = useRouter()
   const [currentImage, setCurrentImage] = useState(0)
   const [previousImage, setPreviousImage] = useState<number | null>(null)
-  const [isHeroImageVisible, setIsHeroImageVisible] = useState(true)
   const [departureMonth, setDepartureMonth] = useState('')
   const [guests, setGuests] = useState('')
   const [holidayType, setHolidayType] = useState('')
@@ -53,18 +52,9 @@ export function HeroSection() {
   useEffect(() => {
     const timeout = window.setTimeout(() => {
       setPreviousImage(currentImage)
-      setCurrentImage((prev) => (prev + 1) % heroImages.length)
-      setIsHeroImageVisible(false)
+      setCurrentImage((currentImage + 1) % heroImages.length)
     }, 7200)
     return () => window.clearTimeout(timeout)
-  }, [currentImage])
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      setIsHeroImageVisible(true)
-    })
-
-    return () => window.cancelAnimationFrame(frame)
   }, [currentImage])
 
   useEffect(() => {
@@ -72,7 +62,7 @@ export function HeroSection() {
 
     const timeout = window.setTimeout(() => {
       setPreviousImage(null)
-    }, 4200)
+    }, 3200)
 
     return () => window.clearTimeout(timeout)
   }, [previousImage])
@@ -96,30 +86,28 @@ export function HeroSection() {
         {/* Cinematic Background */}
         <div className="absolute inset-0">
         {previousImage !== null && (
-          <div className="absolute inset-0 animate-[hero-fade-out_4.2s_ease-[cubic-bezier(0.22,1,0.36,1)]_forwards]">
+          <div className="absolute inset-0 animate-[hero-fade-out_3.2s_ease-in-out_forwards] will-change-[opacity]">
             <Image
               src={heroImages[previousImage]}
               alt=""
               aria-hidden="true"
               fill
               sizes="100vw"
-              className="h-full w-full object-cover scale-[1.05]"
+              className="h-full w-full scale-[1.09] object-cover"
             />
           </div>
         )}
         <div
-          className={`absolute inset-0 transition-opacity will-change-[opacity] ${
-            isHeroImageVisible ? 'opacity-100 duration-[4200ms] ease-[cubic-bezier(0.22,1,0.36,1)]' : 'opacity-0 duration-[1800ms] ease-[cubic-bezier(0.4,0,0.2,1)]'
-          }`}
+          key={heroImages[currentImage]}
+          className="absolute inset-0 animate-[hero-fade-in_3.2s_ease-in-out_forwards] will-change-[opacity]"
         >
           <Image
-            key={heroImages[currentImage]}
             src={heroImages[currentImage]}
             alt="Mauritius paradise"
             fill
             priority={currentImage === 0}
             sizes="100vw"
-            className="h-full w-full object-cover will-change-transform animate-[hero-breathe_7.2s_ease-in-out_forwards]"
+            className="h-full w-full object-cover will-change-transform animate-[hero-soft-zoom_7.2s_ease-in-out_forwards]"
           />
         </div>
         <Image
@@ -173,17 +161,6 @@ export function HeroSection() {
               <span className="text-sm text-white/80">Since 2008</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="mx-auto mb-5 max-w-5xl text-[2.8rem] font-serif font-semibold leading-[0.98] tracking-tight text-white text-balance drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[7.5rem]">
-              Discover the Magic of{' '}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-sky-200 via-cyan-100 to-blue-300 bg-clip-text text-transparent">
-                  Mauritius
-                </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-400 opacity-70" />
-              </span>
-            </h1>
-
             {/* Subheadline */}
             <p className="mx-auto mb-8 max-w-3xl text-base font-light leading-relaxed text-white/95 drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] sm:text-xl md:mb-10 md:text-2xl">
               Award-winning specialists crafting bespoke luxury holidays to the Indian Ocean&apos;s most enchanting island. 
@@ -230,13 +207,17 @@ export function HeroSection() {
 
         {/* Custom CSS */}
         <style jsx>{`
-          @keyframes hero-breathe {
-            0% { transform: scale(1.02); }
-            100% { transform: scale(1.08); }
+          @keyframes hero-fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
           }
           @keyframes hero-fade-out {
-            0% { opacity: 0.95; }
+            0% { opacity: 1; }
             100% { opacity: 0; }
+          }
+          @keyframes hero-soft-zoom {
+            0% { transform: scale(1.035); }
+            100% { transform: scale(1.09); }
           }
           @keyframes fade-in {
             from { opacity: 0; transform: translateY(10px); }
