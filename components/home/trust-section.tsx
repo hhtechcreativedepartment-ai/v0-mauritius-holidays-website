@@ -82,8 +82,8 @@ export function TrustSection() {
             <span className="text-xs font-bold">ATOL</span>
           </div>
           <div>
-            <p className="text-sm font-medium">ATOL Protected</p>
-            <p className="text-xs text-muted-foreground">Licence No. 5744</p>
+            <p className="text-sm font-medium">ATOL Certificate</p>
+            <p className="text-xs text-muted-foreground">ATOL NO. 5744</p>
           </div>
         </div>
         <div className="flex items-center gap-3 bg-card rounded-full px-5 py-3 shadow-sm">
