@@ -34,7 +34,7 @@ export const categories = [
     subtitle: 'Romantic island escapes',
     description: 'Create unforgettable memories with your partner in paradise.',
     propertyCount: 40,
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/beautiful-luxury-outdoor-swimming-pool-hotel-resort-GL2S39UkbjMGQbc1eaCVMXQTMgU3Qw.jpg',
+    image: '/images/honeymoon.jpg',
   },
   {
     id: 'family',
@@ -42,7 +42,7 @@ export const categories = [
     subtitle: 'Easy, fun & memorable',
     description: 'Family-friendly resorts with kids clubs and activities for all ages.',
     propertyCount: 36,
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hammocks-umbrellas-placed-row-4T6TQAytUAJ1kXJbt33gEbq2eHTDqw.jpg',
+    image: '/images/family-holiday.webp',
   },
   {
     id: 'wedding',
@@ -50,7 +50,7 @@ export const categories = [
     subtitle: 'Destination celebrations',
     description: 'Say "I do" in one of the world\'s most romantic destinations.',
     propertyCount: 19,
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1796325354619cc8226f7866.48916407-b2Zopl9ymzYUwEPOXaqt6qbgotP0o5.jpg',
+    image: '/images/wedding.jpg',
   },
   {
     id: 'golf',
@@ -58,7 +58,7 @@ export const categories = [
     subtitle: 'Championship fairways',
     description: 'World-class courses with stunning Indian Ocean backdrops.',
     propertyCount: 16,
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leisure-beautiful-health-garden-landscape-buPXhULhorsvsl96kDOHAGToxM2eog.jpg',
+    image: '/images/golf.jpg',
   },
   {
     id: 'twin-centre',
@@ -66,7 +66,7 @@ export const categories = [
     subtitle: 'Two journeys, one booking',
     description: 'Combine Mauritius with Dubai, Seychelles, or South Africa.',
     propertyCount: 14,
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/person-traveling-enjoying-their-vacation-jQr22I5U9Emg9LMyQF04ugo1U81g0D.jpg',
+    image: '/images/twin-centre.jpg',
   },
 ]
 

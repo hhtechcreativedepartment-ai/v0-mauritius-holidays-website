@@ -118,9 +118,6 @@ export function HeroSection() {
           height={16}
           className="hidden"
         />
-        {/* Multi-layer Gradient Overlay - Black effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/20" />
         {/* Animated Particles Effect */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full animate-pulse" />
@@ -160,12 +157,6 @@ export function HeroSection() {
               <span className="w-px h-4 bg-white/30" />
               <span className="text-sm text-white/80">Since 2008</span>
             </div>
-
-            {/* Subheadline */}
-            <p className="mx-auto mb-8 max-w-3xl text-base font-light leading-relaxed text-white/95 drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] sm:text-xl md:mb-10 md:text-2xl">
-              Award-winning specialists crafting bespoke luxury holidays to the Indian Ocean&apos;s most enchanting island. 
-              Your dream escape, fully protected and personally tailored.
-            </p>
 
             {/* CTA Buttons */}
             <div className="mb-6 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center md:mb-10">
