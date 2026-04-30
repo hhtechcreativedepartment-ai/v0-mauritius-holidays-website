@@ -1007,9 +1007,6 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
             }`}
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-slate-950/25 to-slate-950/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/35 to-transparent" />
-
         <button
           onClick={prevImage}
           className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/80 backdrop-blur text-slate-900 flex items-center justify-center hover:bg-white transition-colors"
@@ -1034,7 +1031,7 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
           </Button>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 pt-28 md:pt-36 pb-24 md:pb-28 min-h-[72vh] flex items-end">
+        <div className="hidden">
           <div className="w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
             <div className="max-w-3xl">
               <div className="flex flex-wrap items-center gap-3 mb-5">
@@ -1139,39 +1136,43 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-12">
           <div className="space-y-12">
-            <section className="grid scroll-mt-32 gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+            <section className="grid scroll-mt-32 gap-6">
               <Card className="h-full rounded-[2rem] border-0 shadow-sm">
                 <CardContent className="p-7 md:p-8">
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <Badge className="rounded-full bg-accent/15 text-accent border-0">{hotel.badge}</Badge>
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: hotel.stars }).map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
-                      ))}
+                  <div className="grid gap-7 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-start">
+                    <div>
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
+                        <Badge className="rounded-full bg-accent/15 text-accent border-0">{hotel.badge}</Badge>
+                        <div className="flex items-center gap-1">
+                          {Array.from({ length: hotel.stars }).map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
+                          ))}
+                        </div>
+                      </div>
+                      <h2 className="text-3xl font-semibold tracking-tight">{hotel.name}</h2>
+                      <div className="mt-3 flex flex-wrap items-center gap-4 text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4" />
+                          {hotel.coast}, Mauritius
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Utensils className="w-4 h-4" />
+                          {hotel.board}
+                        </div>
+                      </div>
+                      <p className="mt-5 text-muted-foreground leading-relaxed">{overviewParagraphs[0]}</p>
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {bestForTags.map((tag) => (
+                          <Badge key={tag} variant="outline" className="rounded-full px-3 py-1">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <h2 className="text-3xl font-semibold tracking-tight">{hotel.name}</h2>
-                  <div className="mt-3 flex flex-wrap items-center gap-4 text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4" />
-                      {hotel.coast}, Mauritius
+                    <div className="rounded-3xl bg-secondary/40 p-5">
+                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Hotel Style / Vibe</p>
+                      <p className="font-medium leading-relaxed">{hotelVibe}</p>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Utensils className="w-4 h-4" />
-                      {hotel.board}
-                    </div>
-                  </div>
-                  <p className="mt-5 text-muted-foreground leading-relaxed">{overviewParagraphs[0]}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {bestForTags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="rounded-full px-3 py-1">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="mt-6 rounded-3xl bg-secondary/40 p-5">
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Hotel Style / Vibe</p>
-                    <p className="font-medium leading-relaxed">{hotelVibe}</p>
                   </div>
                 </CardContent>
               </Card>
