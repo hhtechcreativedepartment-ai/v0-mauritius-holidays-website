@@ -4,6 +4,13 @@ import { useMemo, useState } from "react"
 import Link from "next/link"
 import { CheckCircle2, Plane, Shield } from "lucide-react"
 import { airports, brand, hotels } from "@/lib/data"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 type Props = {
   compact?: boolean
@@ -52,6 +59,52 @@ const requiredMessage: Record<string, string> = {
   nights: "Please select the number of nights.",
   airport: "Please select your preferred departure airport.",
   adults: "Please select at least one adult.",
+}
+
+function QuoteSelect({
+  id,
+  value,
+  placeholder,
+  options,
+  onChange,
+  error,
+}: {
+  id: string
+  value: string
+  placeholder: string
+  options: Array<{ value: string; label: string }>
+  onChange: (value: string) => void
+  error?: string
+}) {
+  return (
+    <Select value={value} onValueChange={onChange}>
+      <SelectTrigger
+        id={id}
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${id}-error` : undefined}
+        className="h-13! w-full cursor-pointer rounded-2xl border-slate-200 bg-white px-5 text-base text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-all duration-200 hover:border-sky-300 hover:bg-sky-50/30 focus:border-sky-500 focus:ring-4 focus:ring-sky-100 data-[placeholder]:text-slate-400"
+      >
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+      <SelectContent
+        position="popper"
+        sideOffset={7}
+        showScrollButtons={false}
+        className="max-h-[min(28rem,var(--radix-select-content-available-height))] rounded-2xl border border-slate-200 bg-white p-1.5 shadow-[0_16px_40px_rgba(15,23,42,0.14)] [&_[data-slot=select-viewport]]:[scrollbar-width:none] [&_[data-slot=select-viewport]::-webkit-scrollbar]:hidden"
+      >
+        {options.map((option) => (
+          <SelectItem
+            key={option.value}
+            value={option.value}
+            showIndicator={false}
+            className="my-0.5 min-h-10 cursor-pointer rounded-xl px-3.5 py-2 text-sm text-slate-700 outline-none transition-colors focus:bg-sky-50 focus:text-primary data-[state=checked]:bg-sky-100 data-[state=checked]:font-semibold data-[state=checked]:text-primary"
+          >
+            {option.label}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  )
 }
 
 export function RequestQuoteForm({ compact = false, defaultHotel = "", className = "" }: Props) {
@@ -126,7 +179,7 @@ export function RequestQuoteForm({ compact = false, defaultHotel = "", className
     )
   }
 
-  const fieldClass = "h-12 w-full rounded-full border border-slate-200 bg-slate-50 px-4 text-base text-slate-900 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100 disabled:opacity-60"
+  const fieldClass = "h-13 w-full rounded-full border border-slate-200 bg-slate-50 px-5 text-base text-slate-900 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100 disabled:opacity-60"
   const ErrorText = ({ name }: { name: string }) => errors[name] ? <p id={`${name}-error`} className="mt-1.5 text-sm text-red-600">{errors[name]}</p> : null
   const Field = ({ name, label, children }: { name: string; label: string; children: React.ReactNode }) => (
     <div className="min-w-0">
@@ -141,20 +194,18 @@ export function RequestQuoteForm({ compact = false, defaultHotel = "", className
   })
 
   return (
-    <div className={`rounded-[2rem] bg-white p-5 shadow-[0_18px_50px_rgba(15,44,85,0.08)] sm:p-8 ${className}`}>
-      <div className="mb-8">
+    <div className={`rounded-[2rem] bg-white p-6 shadow-[0_18px_50px_rgba(15,44,85,0.08)] sm:p-10 ${className}`}>
+      <div className="mb-10">
         <h2 className="font-serif text-3xl font-bold text-primary">Request a Quote</h2>
         <p className="mt-2 text-muted-foreground">Fill in your details and we&apos;ll send you a personalised quote within 24 hours.</p>
       </div>
       <form onSubmit={submit} noValidate>
-        <fieldset disabled={status === "submitting"} className="space-y-8">
+        <fieldset disabled={status === "submitting"} className="space-y-10">
           <section aria-labelledby="personal-details">
             <h3 id="personal-details" className="mb-5 border-b border-sky-100 pb-3 text-xl font-bold text-primary">Personal Details</h3>
-            <div className={`grid gap-5 ${grid}`}>
+            <div className={`grid gap-x-6 gap-y-6 ${grid}`}>
               <Field name="title" label="Title">
-                <select id="title" value={values.title} onChange={(e) => update("title", e.target.value)} className={fieldClass} {...errorProps("title")}>
-                  <option value="">Select title</option>{["Mr.", "Mrs.", "Miss", "Ms.", "Dr."].map((v) => <option key={v}>{v}</option>)}
-                </select>
+                <QuoteSelect id="title" value={values.title} placeholder="Select title" options={["Mr.", "Mrs.", "Miss", "Ms.", "Dr."].map((v) => ({ value: v, label: v }))} onChange={(value) => update("title", value)} error={errors.title} />
               </Field>
               <Field name="firstName" label="First Name"><input id="firstName" value={values.firstName} onChange={(e) => update("firstName", e.target.value)} autoComplete="given-name" className={fieldClass} {...errorProps("firstName")} /></Field>
               <Field name="surname" label="Surname"><input id="surname" value={values.surname} onChange={(e) => update("surname", e.target.value)} autoComplete="family-name" className={fieldClass} {...errorProps("surname")} /></Field>
@@ -165,32 +216,28 @@ export function RequestQuoteForm({ compact = false, defaultHotel = "", className
 
           <section aria-labelledby="holiday-details">
             <h3 id="holiday-details" className="mb-5 border-b border-sky-100 pb-3 text-xl font-bold text-primary">Holiday Details</h3>
-            <div className={`grid gap-5 ${grid}`}>
+            <div className={`grid gap-x-6 gap-y-6 ${grid}`}>
               <Field name="hotel" label="Select Hotel">
-                <select id="hotel" value={values.hotel} onChange={(e) => update("hotel", e.target.value)} className={fieldClass} {...errorProps("hotel")}>
-                  <option value="">Select a hotel</option>{hotels.map((h) => <option key={h.slug} value={h.slug}>{h.name}</option>)}
-                </select>
+                <QuoteSelect id="hotel" value={values.hotel} placeholder="Select a hotel" options={hotels.map((h) => ({ value: h.slug, label: h.name }))} onChange={(value) => update("hotel", value)} error={errors.hotel} />
               </Field>
               <Field name="boardBasis" label="Board Basis">
-                <select id="boardBasis" value={values.boardBasis} onChange={(e) => update("boardBasis", e.target.value)} className={fieldClass} {...errorProps("boardBasis")}>
-                  <option value="">Select board basis</option>{boardOptions.map((v) => <option key={v}>{v}</option>)}
-                </select>
+                <QuoteSelect id="boardBasis" value={values.boardBasis} placeholder="Select board basis" options={boardOptions.map((v) => ({ value: v, label: v }))} onChange={(value) => update("boardBasis", value)} error={errors.boardBasis} />
               </Field>
             </div>
           </section>
 
           <section aria-labelledby="departure-details">
             <h3 id="departure-details" className="mb-5 border-b border-sky-100 pb-3 text-xl font-bold text-primary">Preferred Departure Date</h3>
-            <div className={`grid gap-5 ${grid}`}>
+            <div className={`grid gap-x-6 gap-y-6 ${grid}`}>
               <Field name="departureDate" label="Departure Date"><input id="departureDate" type="date" min={today} value={values.departureDate} onChange={(e) => update("departureDate", e.target.value)} className={fieldClass} {...errorProps("departureDate")} /></Field>
               <Field name="flexibility" label="Flexibility">
-                <select id="flexibility" value={values.flexibility} onChange={(e) => update("flexibility", e.target.value)} className={fieldClass} {...errorProps("flexibility")}><option value="">Select flexibility</option>{flexibilityOptions.map((v) => <option key={v}>{v}</option>)}</select>
+                <QuoteSelect id="flexibility" value={values.flexibility} placeholder="Select flexibility" options={flexibilityOptions.map((v) => ({ value: v, label: v }))} onChange={(value) => update("flexibility", value)} error={errors.flexibility} />
               </Field>
               <Field name="nights" label="Number of Nights">
-                <select id="nights" value={values.nights} onChange={(e) => update("nights", e.target.value)} className={fieldClass} {...errorProps("nights")}><option value="">Select nights</option>{Array.from({ length: 28 }, (_, i) => i + 1).map((v) => <option key={v} value={v}>{v} night{v === 1 ? "" : "s"}</option>)}</select>
+                <QuoteSelect id="nights" value={values.nights} placeholder="Select nights" options={Array.from({ length: 28 }, (_, i) => i + 1).map((v) => ({ value: String(v), label: `${v} night${v === 1 ? "" : "s"}` }))} onChange={(value) => update("nights", value)} error={errors.nights} />
               </Field>
               <Field name="airport" label="Departure Airport">
-                <select id="airport" value={values.airport} onChange={(e) => update("airport", e.target.value)} className={fieldClass} {...errorProps("airport")}><option value="">Select airport</option>{airports.map((v) => <option key={v}>{v}</option>)}</select>
+                <QuoteSelect id="airport" value={values.airport} placeholder="Select airport" options={airports.map((v) => ({ value: v, label: v }))} onChange={(value) => update("airport", value)} error={errors.airport} />
               </Field>
               <div>
                 <label htmlFor="maximumPrice" className="mb-2 block text-sm font-semibold text-slate-800">Maximum Price £</label>
@@ -202,16 +249,14 @@ export function RequestQuoteForm({ compact = false, defaultHotel = "", className
 
           <section aria-labelledby="passengers">
             <h3 id="passengers" className="mb-5 border-b border-sky-100 pb-3 text-xl font-bold text-primary">Passengers</h3>
-            <div className={`grid gap-5 ${grid}`}>
+            <div className={`grid gap-x-6 gap-y-6 ${grid}`}>
               <Field name="adults" label="Adults">
-                <select id="adults" value={values.adults} onChange={(e) => update("adults", e.target.value)} className={fieldClass} {...errorProps("adults")}>{Array.from({ length: 10 }, (_, i) => i + 1).map((v) => <option key={v}>{v}</option>)}</select>
+                <QuoteSelect id="adults" value={values.adults} placeholder="Select adults" options={Array.from({ length: 10 }, (_, i) => i + 1).map((v) => ({ value: String(v), label: String(v) }))} onChange={(value) => update("adults", value)} error={errors.adults} />
               </Field>
-              <div><label htmlFor="children" className="mb-2 block text-sm font-semibold text-slate-800">Children</label><select id="children" value={values.children} onChange={(e) => setChildren(e.target.value)} className={fieldClass}>{Array.from({ length: 7 }, (_, i) => i).map((v) => <option key={v}>{v}</option>)}</select></div>
+              <div><label htmlFor="children" className="mb-2 block text-sm font-semibold text-slate-800">Children</label><QuoteSelect id="children" value={values.children} placeholder="Select children" options={Array.from({ length: 7 }, (_, i) => i).map((v) => ({ value: String(v), label: String(v) }))} onChange={setChildren} /></div>
               {values.childAges.map((age, index) => (
                 <Field key={index} name={`childAge${index}`} label={`Child ${index + 1} Age`}>
-                  <select id={`childAge${index}`} value={age} onChange={(e) => setValues((current) => ({ ...current, childAges: current.childAges.map((v, i) => i === index ? e.target.value : v) }))} className={fieldClass} {...errorProps(`childAge${index}`)}>
-                    <option value="">Select age</option>{Array.from({ length: 18 }, (_, i) => i).map((v) => <option key={v} value={v}>{v} year{v === 1 ? "" : "s"}</option>)}
-                  </select>
+                  <QuoteSelect id={`childAge${index}`} value={age} placeholder="Select age" options={Array.from({ length: 18 }, (_, i) => i).map((v) => ({ value: String(v), label: `${v} year${v === 1 ? "" : "s"}` }))} onChange={(value) => setValues((current) => ({ ...current, childAges: current.childAges.map((v, i) => i === index ? value : v) }))} error={errors[`childAge${index}`]} />
                 </Field>
               ))}
             </div>

@@ -54,8 +54,11 @@ function SelectContent({
   className,
   children,
   position = 'popper',
+  showScrollButtons = true,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Content>) {
+}: React.ComponentProps<typeof SelectPrimitive.Content> & {
+  showScrollButtons?: boolean
+}) {
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
@@ -69,8 +72,9 @@ function SelectContent({
         position={position}
         {...props}
       >
-        <SelectScrollUpButton />
+        {showScrollButtons ? <SelectScrollUpButton /> : null}
         <SelectPrimitive.Viewport
+          data-slot="select-viewport"
           className={cn(
             'p-1',
             position === 'popper' &&
@@ -79,7 +83,7 @@ function SelectContent({
         >
           {children}
         </SelectPrimitive.Viewport>
-        <SelectScrollDownButton />
+        {showScrollButtons ? <SelectScrollDownButton /> : null}
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
   )
@@ -101,8 +105,11 @@ function SelectLabel({
 function SelectItem({
   className,
   children,
+  showIndicator = true,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Item>) {
+}: React.ComponentProps<typeof SelectPrimitive.Item> & {
+  showIndicator?: boolean
+}) {
   return (
     <SelectPrimitive.Item
       data-slot="select-item"
@@ -112,11 +119,13 @@ function SelectItem({
       )}
       {...props}
     >
-      <span className="absolute right-2 flex size-3.5 items-center justify-center">
-        <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="size-4" />
-        </SelectPrimitive.ItemIndicator>
-      </span>
+      {showIndicator ? (
+        <span className="absolute right-2 flex size-3.5 items-center justify-center">
+          <SelectPrimitive.ItemIndicator>
+            <CheckIcon className="size-4" />
+          </SelectPrimitive.ItemIndicator>
+        </span>
+      ) : null}
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
     </SelectPrimitive.Item>
   )
