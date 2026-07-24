@@ -39,6 +39,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { hotels, airports, brand } from '@/lib/data'
+import { RequestQuoteForm } from '@/components/forms/request-quote-form'
 
 type Hotel = typeof hotels[number]
 type LucideIcon = typeof Star
@@ -506,18 +507,6 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
   const [previousImage, setPreviousImage] = useState<number | null>(null)
   const [isHeroImageVisible, setIsHeroImageVisible] = useState(true)
   const [isHeroZoomed, setIsHeroZoomed] = useState(false)
-  const [quoteSubmitted, setQuoteSubmitted] = useState(false)
-  const [formData, setFormData] = useState({
-    firstName: '',
-    surname: '',
-    email: '',
-    phone: '',
-    departureDate: '',
-    airport: '',
-    adults: '2',
-    children: '0',
-    comments: '',
-  })
 
   const bestForTags = getBestForTags(hotel)
   const hotelVibe = getHotelVibe(hotel, bestForTags)
@@ -592,10 +581,6 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
     return () => window.clearTimeout(timeout)
   }, [previousImage])
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setQuoteSubmitted(true)
-  }
 
   const relatedHotels = hotels
     .filter((h) => h.id !== hotel.id && h.categories.some((c) => hotel.categories.includes(c)))
@@ -1306,135 +1291,9 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
               </CardContent>
             </Card>
 
-            <Card id="quote-form" className="rounded-[2rem] border-0 shadow-lg lg:sticky lg:top-24 scroll-mt-28">
-              <CardHeader>
-                <CardTitle>Request a Quote</CardTitle>
-                <p className="text-sm text-muted-foreground">
-                  Fill in your details and we&apos;ll send you a personalised quote within 24 hours.
-                </p>
-              </CardHeader>
-              <CardContent>
-                {quoteSubmitted && (
-                  <div className="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-                    Quote request submitted. Our team will contact you within 24 hours.
-                  </div>
-                )}
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <Input
-                      placeholder="First name"
-                      value={formData.firstName}
-                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="rounded-xl"
-                      required
-                    />
-                    <Input
-                      placeholder="Surname"
-                      value={formData.surname}
-                      onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
-                      className="rounded-xl"
-                      required
-                    />
-                  </div>
-                  <Input
-                    type="email"
-                    placeholder="Email address"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="rounded-xl"
-                    required
-                  />
-                  <Input
-                    type="tel"
-                    placeholder="Phone number"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="rounded-xl"
-                    required
-                  />
-                  <Input
-                    type="date"
-                    placeholder="Preferred departure date"
-                    value={formData.departureDate}
-                    onChange={(e) => setFormData({ ...formData, departureDate: e.target.value })}
-                    className="rounded-xl"
-                    required
-                  />
-                  <Select
-                    value={formData.airport}
-                    onValueChange={(value) => setFormData({ ...formData, airport: value })}
-                  >
-                    <SelectTrigger className="rounded-xl">
-                      <SelectValue placeholder="Select airport" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {airports.map((airport) => (
-                        <SelectItem key={airport} value={airport}>
-                          {airport}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="space-y-1">
-                      <label className="text-xs text-muted-foreground">Adults</label>
-                      <Select
-                        value={formData.adults}
-                        onValueChange={(value) => setFormData({ ...formData, adults: value })}
-                      >
-                        <SelectTrigger className="rounded-xl">
-                          <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {[1, 2, 3, 4, 5, 6].map((n) => (
-                            <SelectItem key={n} value={String(n)}>
-                              {n}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-xs text-muted-foreground">Children</label>
-                      <Select
-                        value={formData.children}
-                        onValueChange={(value) => setFormData({ ...formData, children: value })}
-                      >
-                        <SelectTrigger className="rounded-xl">
-                          <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {[0, 1, 2, 3, 4].map((n) => (
-                            <SelectItem key={n} value={String(n)}>
-                              {n}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                  <Textarea
-                    placeholder="Any special requests or questions?"
-                    value={formData.comments}
-                    onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
-                    className="rounded-xl min-h-[110px]"
-                  />
-                  <Button type="submit" className="w-full rounded-full h-12">
-                    Request Quote
-                  </Button>
-                </form>
-
-                <div className="flex items-center justify-center gap-2 mt-4 pt-4 border-t border-border">
-                  <Phone className="w-4 h-4 text-muted-foreground" />
-                  <a
-                    href={`tel:${brand.phone.replace(/\s/g, '')}`}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Prefer to call? {brand.phone}
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+            <div id="quote-form" className="scroll-mt-28 lg:sticky lg:top-24">
+              <RequestQuoteForm compact defaultHotel={hotel.slug} />
+            </div>
           </aside>
         </div>
       </div>
