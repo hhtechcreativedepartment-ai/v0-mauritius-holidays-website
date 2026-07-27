@@ -229,7 +229,7 @@ export function RequestQuoteForm({ compact = false, defaultHotel = "", className
           <section aria-labelledby="departure-details">
             <h3 id="departure-details" className="mb-5 border-b border-sky-100 pb-3 text-xl font-bold text-primary">Preferred Departure Date</h3>
             <div className={`grid gap-x-6 gap-y-6 ${grid}`}>
-              <Field name="departureDate" label="Departure Date"><input id="departureDate" type="date" min={today} value={values.departureDate} onChange={(e) => update("departureDate", e.target.value)} className={fieldClass} {...errorProps("departureDate")} /></Field>
+              <Field name="departureDate" label="Departure Date"><input id="departureDate" type="date" lang="en-US" min={today} value={values.departureDate} onChange={(e) => update("departureDate", e.target.value)} className={fieldClass} aria-label="Departure Date (MM/DD/YYYY)" {...errorProps("departureDate")} /></Field>
               <Field name="flexibility" label="Flexibility">
                 <QuoteSelect id="flexibility" value={values.flexibility} placeholder="Select flexibility" options={flexibilityOptions.map((v) => ({ value: v, label: v }))} onChange={(value) => update("flexibility", value)} error={errors.flexibility} />
               </Field>
