@@ -33,3 +33,41 @@ To learn more, take a look at the following resources:
 - [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
 
 <a href="https://v0.app/chat/api/kiro/clone/hhtechcreativedepartment-ai/v0-mauritius-holidays-website" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+
+# Mauritius Holidays Website
+
+This is a production-ready Next.js application written in TypeScript and run
+with Node.js. TypeScript is compiled automatically during `npm run build`.
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Node.js hosting / cPanel deployment
+
+Use these application settings in the hosting control panel:
+
+- Node.js version: 20.9 or newer (Node.js 22 LTS recommended)
+- Application mode: Production
+- Application root: the directory containing `package.json`
+- Startup file: `app.js`
+- Install command: `npm install`
+- Build command: `npm run build`
+- Environment variable: `NODE_ENV=production`
+
+After uploading the project, run:
+
+```bash
+npm install
+npm run build
+npm start
+```
+
+The hosting provider normally supplies the `PORT` environment variable. The
+server listens on that port automatically and binds to `0.0.0.0` by default.
+
+Do not upload the local `node_modules` or `.next` directories. Install packages
+and run the production build on the hosting server instead.
